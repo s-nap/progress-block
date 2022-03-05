@@ -38,6 +38,8 @@
             type="number"
             id="percent"
             class="percent"
+            min="0" max="100"
+            oninput="validity.valid||(value='');"
             style="padding: 0"
           />
           <label for="percent" class="text">Value</label>
