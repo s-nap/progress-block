@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      media="all and (orientation:portrait)"
+      href="portrait.css"
+    />
+    <link
+      rel="stylesheet"
+      media="all and (orientation:landscape)"
+      href="landscape.css"
+    />
+
+    <title>Progress</title>
+  </head>
+  <body>
+    <span class="name">Progress</span>
+    <div class="container">
+      <svg class="progress-ring" width="140" height="140">
+        <circle
+          class="progress-ring__circle"
+          stroke="#1f75fe"
+          stroke-width="10"
+          cx="70"
+          cy="70"
+          r="60"
+          fill="transparent"
+        />
+      </svg>
+      <div class="controls">
+        <div class="val">
+          <input
+            type="number"
+            id="percent"
+            class="percent"
+            style="padding: 0"
+          />
+          <label for="percent" class="text">Value</label>
+        </div>
+        <div class="toggle">
+          <input
+            type="checkbox"
+            id="toggle-button-animate"
+            class="toggle-button"
+          />
+          <label for="toggle-button-animate" class="text">Animate</label>
+        </div>
+        <div class="toggle">
+          <input
+            type="checkbox"
+            id="toggle-button-hide"
+            class="toggle-button"
+          />
+          <label for="toggle-button-hide" class="text">Hide</label>
+        </div>
+      </div>
+    </div>
+    <script src="progress.js"></script>
+  </body>
+</html>
