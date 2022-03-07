@@ -35,7 +35,7 @@
 .progress-ring__circle {
   transform-origin: center;
   transform: rotate(-90deg);
-  transition: stroke-dashoffset 0.2s;
+  transition: stroke-dashoffset 0.5s;
 }
 
 .progress-ring__circle.hide {
@@ -124,3 +124,11 @@ input[type="number"]:focus {
 .toggle-button:checked {
   background-color: #1f75fe;
 }
+
+.blink {
+  animation: blink 0.5s linear infinite; ;
+}
+
+@keyframes blink{
+  0%, 100% {opacity: 0;}
+  }

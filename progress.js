@@ -58,6 +58,8 @@ class ProgressBar {
     this.circle.classList.add("animate");
     this.animateInterval = setInterval(() => {
       const percent = this.value < 100 ? this.value + 1 : 0;
+      if (percent === 0) this.circle.classList.add("blink");
+      else if (percent === 1) this.circle.classList.remove("blink");
       this.setProgress(percent);
 
       typeof callback === "function" && callback(percent);
