@@ -1,16 +1,8 @@
-body {
-  font-family: 'League Spartan', Arial, Helvetica, sans-serif;
+.container {
+  font-family: 'League Spartan', 'Arial', sans-serif;
   font-size: 18px;
   font-weight: 600;
-}
-
-.name {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-}
-
-.container {
+  letter-spacing: 0.75px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -52,7 +44,7 @@ body {
 
 .controls {
   margin-top: 50px;
-  width: 145px;
+  width: 152px;
 }
 
 @media (orientation: landscape) {
@@ -134,4 +126,14 @@ input[type="number"]:focus {
 
 .toggle-button:checked {
   background-color: #1f75fe;
+}
+
+.name {
+  position: absolute;
+  left: 0px;
+  top: 8px;
+  font-family: 'League Spartan', 'Arial', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
