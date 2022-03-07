@@ -1,6 +1,6 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -11,13 +11,14 @@ body {
 }
 
 .container {
-  height: 100%;
-  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @media (orientation: landscape) {
@@ -28,12 +29,13 @@ body {
 }
 
 .progress-ring {
-  margin-top: 90px;
-  margin-bottom: 50px;
+  margin-top: 16px;
+  margin-bottom: 40px;
 }
 
 @media (orientation: landscape) {
   .progress-ring {
+    margin-top: 38px;
     margin-right: 90px;
   }
 }
@@ -41,7 +43,11 @@ body {
 .progress-ring__circle {
   transform-origin: center;
   transform: rotate(-90deg);
-  transition: stroke-dashoffset 0.3s;
+  transition: stroke-dashoffset 0.2s;
+}
+
+.progress-ring__circle.hide {
+  display: none;
 }
 
 .controls {
@@ -49,15 +55,20 @@ body {
   width: 137px;
 }
 
-.val,
+@media (orientation: landscape) {
+  .controls {
+    margin-top: 10px;
+  }
+}
+
+.amount,
 .toggle {
   padding: 0;
   align-items: center;
   display: flex;
   justify-content: flex-start;
   height: 40px;
-  /* border: 1px solid black; */
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 label.text {
@@ -69,7 +80,6 @@ input[type="number"] {
   border: 1px solid black;
   width: 46px;
   height: 28px;
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   font-weight: 600;
   text-align: center;
@@ -81,56 +91,46 @@ input[type="number"]:focus {
 }
 
 .toggle-button {
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   font-weight: 600;
   text-align: center;
   position: relative;
-
   width: 48px;
   height: 30px;
-
   vertical-align: top;
-
   display: inline-block;
   margin: 0;
-
   background: #c4d0d4;
-  border: 0px solid black;
   border-radius: 15px;
-
   outline: none;
   cursor: pointer;
-
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-
-  transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
+  transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .toggle-button::after {
   content: "";
-
   display: inline-block;
   position: absolute;
   left: 2px;
   top: 2px;
-
   width: 26px;
   height: 26px;
   background-color: white;
   border-radius: 50%;
-
   transform: translateX(0);
-
-  transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
+  transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.2);
 }
 
 .toggle-button:checked::after {
   transform: translateX(calc(100% - 8px));
   background-color: #fff;
 }
+
 .toggle-button:checked {
   background-color: #1f75fe;
 }
