@@ -1,6 +1,6 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
+  font-family: 'League Spartan', Arial, Helvetica, sans-serif;
+  font-size: 18px;
   font-weight: 600;
 }
 
@@ -52,7 +52,7 @@ body {
 
 .controls {
   margin-top: 50px;
-  width: 137px;
+  width: 145px;
 }
 
 @media (orientation: landscape) {
@@ -72,6 +72,7 @@ body {
 }
 
 label.text {
+  padding-top: 3px;
   margin-left: 24px;
 }
 
