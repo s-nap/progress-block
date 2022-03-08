@@ -50,26 +50,16 @@ class ProgressBar {
     this.circle.classList.remove("hide");
   }
 
-  startAnimateBar(callback) {
-    if (this.animateInterval) {
-      return;
-    }
-
+  startAnimateBar() {
     this.circle.classList.add("animate");
-    this.animateInterval = setInterval(() => {
-      const percent = this.value < 100 ? this.value + 1 : 0;
-      if (percent === 0) this.circle.classList.add("blink");
-      else if (percent === 1) this.circle.classList.remove("blink");
-      this.setProgress(percent);
-
-      typeof callback === "function" && callback(percent);
-    }, 500);
   }
 
   stopAnimateBar() {
-    clearInterval(this.animateInterval);
+    this.circle.animate([{ opacity: 0 }, { opacity: 1 }], {
+      duration: 500,
+      iterations: 1,
+    });
     this.circle.classList.remove("animate");
-    this.animateInterval = undefined;
   }
 }
 
@@ -96,7 +86,7 @@ const animateCallback = percent => {
 let animate = document.getElementById("toggle-button-animate");
 animate.addEventListener("click", e => {
   if (animate.checked) {
-    progressBar.startAnimateBar(animateCallback);
+    progressBar.startAnimateBar();
   } else {
     progressBar.stopAnimateBar();
   }
